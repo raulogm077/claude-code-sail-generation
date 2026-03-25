@@ -542,7 +542,11 @@ a!localVariables(
                       a!richTextDisplayField(
                         labelPosition: "COLLAPSED",
                         value: {
-                          text(fv!item.startDate, "MMM yyyy"),
+                          if(
+                            a!isNullOrEmpty(fv!item.startDate),
+                            "—",
+                            text(fv!item.startDate, "MMM yyyy")
+                          ),
                           " – ",
                           if(
                             a!isNullOrEmpty(fv!item.endDate),
@@ -1022,7 +1026,11 @@ a!localVariables(
                             labelPosition: "COLLAPSED",
                             value: {
                               a!richTextItem(
-                                text: length(local!employmentHistory) & " empleos registrados",
+                                text: if(
+                                  a!isNullOrEmpty(local!employmentHistory),
+                                  "0 empleos registrados",
+                                  length(local!employmentHistory) & " empleos registrados"
+                                ),
                                 color: if(
                                   a!isNullOrEmpty(local!employmentHistory),
                                   "NEGATIVE",
@@ -1057,7 +1065,11 @@ a!localVariables(
                             labelPosition: "COLLAPSED",
                             value: {
                               a!richTextItem(
-                                text: length(local!education) & " registros de formación",
+                                text: if(
+                                  a!isNullOrEmpty(local!education),
+                                  "0 registros de formación",
+                                  length(local!education) & " registros de formación"
+                                ),
                                 color: if(
                                   a!isNullOrEmpty(local!education),
                                   "NEGATIVE",
