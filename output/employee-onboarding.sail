@@ -109,7 +109,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Información Personal",
-        instructions: "Ingrese los datos personales del nuevo empleado",
         disableNextButton: or(
           a!isNullOrEmpty(local!firstName),
           a!isNullOrEmpty(local!lastName),
@@ -351,7 +350,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Información del Puesto",
-        instructions: "Defina el cargo, área y condiciones laborales",
         disableNextButton: or(
           a!isNullOrEmpty(local!jobTitle),
           a!isNullOrEmpty(local!department),
@@ -497,7 +495,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Historial de Empleo",
-        instructions: "Registre los empleos anteriores del candidato",
         contents: {
           a!sectionLayout(
             label: "Empleos Anteriores",
@@ -603,8 +600,7 @@ a!localVariables(
                     icon: "plus"
                   )
                 },
-                align: "START",
-                marginAbove: "STANDARD"
+                align: "START"
               )
             }
           )
@@ -616,7 +612,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Educación y Certificaciones",
-        instructions: "Capture la formación académica y certificaciones profesionales",
         contents: {
           a!sectionLayout(
             label: "Formación Académica y Certificaciones",
@@ -709,8 +704,7 @@ a!localVariables(
                     icon: "plus"
                   )
                 },
-                align: "START",
-                marginAbove: "STANDARD"
+                align: "START"
               )
             }
           )
@@ -722,7 +716,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Documentos y Acuerdos",
-        instructions: "El empleado debe aceptar las políticas de la empresa y firmar los documentos requeridos",
         disableNextButton: not(
           and(
             local!acceptCodeOfConduct,
@@ -909,7 +902,6 @@ a!localVariables(
       ══════════════════════════════════════════════ */
       a!wizardStep(
         label: "Revisión y Confirmación",
-        instructions: "Verifique la información antes de enviar el registro",
         contents: {
           a!sectionLayout(
             label: "Resumen del Registro",
