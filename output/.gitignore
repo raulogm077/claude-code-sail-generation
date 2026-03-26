@@ -2,3 +2,5 @@
 *
 # Except this .gitignore file
 !.gitignore
+# Except SAIL output files for Orquestador de Agentes
+!OA-*.sail
